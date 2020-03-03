@@ -14,9 +14,7 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: [
-					{
-						loader: MiniCssExtractPlugin.loader
-					},
+					MiniCssExtractPlugin.loader,
 					{
 						loader: "css-loader",
 						options: {
@@ -26,7 +24,17 @@ module.exports = {
 							}
 						}
 					},
-					{ loader: "sass-loader" }
+					"sass-loader",
+					{
+						loader: "sass-resources-loader",
+						options: {
+							// Provide path to the file with resources
+							// resources: "./path/to/resources.scss",
+
+							// Or array of paths
+							resources: ["./src/styles/_variables.scss"]
+						}
+					}
 				]
 			},
 			{
