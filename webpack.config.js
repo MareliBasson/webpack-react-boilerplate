@@ -72,33 +72,33 @@ module.exports = [
 		resolve: {
 			extensions: [".js", ".jsx", ".json", ".wasm", ".mjs", "*"]
 		}
-	},
-	{
-		target: "node",
-		entry: {
-			server: "./src/server.js"
-		},
-		node: {
-			dns: "mock",
-			fs: "empty",
-			path: true,
-			url: false,
-			net: "empty"
-		},
-		output: {
-			path: path.resolve(__dirname),
-			filename: "[name].js"
-		},
-		module: {
-			rules: [
-				{
-					test: /\.(js|jsx)$/,
-					exclude: /node_modules/,
-					use: {
-						loader: "babel-loader"
-					}
-				}
-			]
-		}
 	}
+	// {
+	// 	target: "node",
+	// 	entry: {
+	// 		server: "./src/server.js"
+	// 	},
+	// 	node: {
+	// 		dns: "mock",
+	// 		fs: "empty",
+	// 		path: true,
+	// 		url: false,
+	// 		net: "empty"
+	// 	},
+	// 	output: {
+	// 		path: path.resolve(__dirname),
+	// 		filename: "[name].js"
+	// 	},
+	// 	module: {
+	// 		rules: [
+	// 			{
+	// 				test: /\.(js|jsx)$/,
+	// 				exclude: /node_modules/,
+	// 				use: {
+	// 					loader: "babel-loader"
+	// 				}
+	// 			}
+	// 		]
+	// 	}
+	// }
 ]
